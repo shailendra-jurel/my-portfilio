@@ -70,7 +70,7 @@ function App() {
                   <Link to="/blogs"><FontAwesomeIcon icon={faBlog} /><span>Blogs</span></Link>
                 </div>
                 <div className='nav-item-box'>
-                  <a href="https://github.com/cherry-1729-9090">
+                  <a href="https://github.com/shailendra-jurel">
                     <FontAwesomeIcon icon={faCodeBranch} />
                     <FontAwesomeIcon icon={faStar} />
                   </a>

@@ -37,7 +37,7 @@ function ProjectSeper() {
             </div>
 
             <div className='Project-container'>
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/cherry-1729-9090/web_dev_bonus_projecthttps://github.com/cherry-1729-9090/Dash-board-clone")}>
+                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
                     <div className='project-card-heading'>
                         <h1>Scaler Dash board clone</h1>
                     </div>
@@ -65,7 +65,7 @@ function ProjectSeper() {
 
 
 
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/cherry-1729-9090/zolo_project")}>
+                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
                     <div className='project-card-heading'>
                         <h1>Library App</h1>
                     </div>
@@ -91,7 +91,7 @@ function ProjectSeper() {
                 </div>
 
 
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/cherry-1729-9090/FakeStoreProductService_05")}>
+                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
                     <div className='project-card-heading'>
                         <h1>Fake Store Product Service</h1>
                     </div>
@@ -118,7 +118,7 @@ function ProjectSeper() {
                 </div>
 
 
-                <div className='Project-card' onClick={()=> handleCardClick("https://github.com/cherry-1729-9090/FakeStoreProductService_05")}>
+                <div className='Project-card' onClick={()=> handleCardClick("https://github.com/shailendra-jurel")}>
                     <div className='project-card-heading'>
                         <h1>Fake Store cart Service</h1>
                     </div>
@@ -146,7 +146,7 @@ function ProjectSeper() {
 
 
 
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/cherry-1729-9090/web_dev_bonus_project")}>
+                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
                     <div className='project-card-heading'>
                         <h1>To Do List</h1>
                     </div>
@@ -174,7 +174,7 @@ function ProjectSeper() {
 
 
 
-                <div className='Project-card' onClick={()=>handleCardClick("")}>
+                <div className='Project-card' onClick={()=>handleCardClick("https://github.com/shailendra-jurel")}>
                     <div className='project-card-heading'>
                         <h1>Tic Tac Toe</h1>
                     </div>
