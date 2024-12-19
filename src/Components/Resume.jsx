@@ -23,6 +23,12 @@ const Resume = () => {
           className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh]" 
           type="application/pdf"
         />
+        <br />
+          <embed 
+          src={profile} 
+          className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh]" 
+          type="application/pdf"
+        />
       </div>
     </div>
   );
