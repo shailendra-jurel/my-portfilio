@@ -124,7 +124,7 @@ const App = () => {
 
         {/* Main Content */}
         <main className="w-full pt-16">
-          <div className="container mx-auto">
+          <div className="w-full mx-auto">
             <section id="home" className="min-h-screen w-full">
               <Home />
             </section>

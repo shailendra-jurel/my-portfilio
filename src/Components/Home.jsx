@@ -155,41 +155,42 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-black  w-full">
-      {/* Container for content width consistency */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        {/* Optimized cursor light effect */}
-        <div 
-          className="fixed w-32 h-32 pointer-events-none blur-2xl opacity-30 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 transition-transform duration-100 ease-out"
-          style={{
-            transform: `translate(${mousePosition.x - 64}px, ${mousePosition.y - 64}px)`,
-            willChange: 'transform'
-          }}
-        />
+    <div className="relative min-h-screen bg-black w-full overflow-x-hidden">
+    {/* Container with proper responsive padding */}
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Cursor effect */}
+      <div 
+        className="fixed w-32 h-32 pointer-events-none blur-2xl opacity-30 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 transition-transform duration-100 ease-out"
+        style={{
+          transform: `translate(${mousePosition.x - 64}px, ${mousePosition.y - 64}px)`,
+          willChange: 'transform'
+        }}
+      />
 
-        {/* Animated grid background */}
-        <div className="absolute inset-0 w-full h-full bg-[linear-gradient(transparent_1px,_#000_1px),_linear-gradient(90deg,_transparent_1px,_#000_1px)] bg-[size:30px_30px] [background-position:center] opacity-20">
+
+       {/* Grid background */}
+       <div className="absolute inset-0 w-full h-full bg-[linear-gradient(transparent_1px,_#000_1px),_linear-gradient(90deg,_transparent_1px,_#000_1px)] bg-[size:30px_30px] [background-position:center] opacity-20">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-between min-h-screen gap-8 md:gap-12">
+        <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-between min-h-screen w-full gap-8 md:gap-12 py-16 md:py-0">
           {/* Text Content */}
-          <div className="w-full md:w-1/2 text-center md:text-left space-y-8">
+          <div className="w-full md:w-1/2 text-center md:text-left space-y-6 md:space-y-8">
             <div className="space-y-4">
-              <div className="inline-block">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient-x pb-2">
+              <div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient-x pb-2">
                   Hi There! 
                   <span className="ml-3 animate-wave inline-block">👋</span>
                 </h1>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                 I'M <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Shailendra_Jurel</span>
               </h2>
             </div>
 
             {/* Typing Effect */}
-            <div className="text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[1.5em]">
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[1.5em]">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
                 {displayedText}
               </span>
@@ -197,65 +198,65 @@ const Home = () => {
             </div>
 
             {/* Call to Action Button */}
-            <div className="flex justify-center md:justify-start space-x-4">
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg 
-                             transform hover:scale-105 transition-all duration-300 
-                             flex items-center space-x-2 group">
-                <span className="text-white">Download CV</span>
-                <FontAwesomeIcon 
-                  icon={faDownload} 
-                  className="text-white text-lg group-hover:animate-bounce" 
-                />
-              </button>
-            </div>
+            <div className="flex justify-center md:justify-start space-x-4 pt-4">
+                        <button className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg 
+                                       transform hover:scale-105 transition-all duration-300 
+                                       flex items-center space-x-2 group">
+                          <span className="text-white">Download CV</span>
+                          <FontAwesomeIcon 
+                            icon={faDownload} 
+                            className="text-white text-lg group-hover:animate-bounce" 
+                          />
+                        </button>
+                      </div>
 
             {/* Social Links */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group relative p-3 rounded-lg transform transition-all duration-300 
-                           hover:-translate-y-2 hover:scale-110 bg-gradient-to-r from-cyan-500/20 to-purple-500/20
-                           ${link.color}`}
-                  aria-label={link.label}
-                >
-                  <FontAwesomeIcon 
-                    icon={link.icon} 
-                    className="text-2xl text-cyan-400 group-hover:text-white transition-colors duration-300" 
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+                         {socialLinks.map((link, index) => (
+                           <a
+                             key={index}
+                             href={link.href}
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             className={`group relative p-2 sm:p-3 rounded-lg transform transition-all duration-300 
+                                      hover:-translate-y-2 hover:scale-110 bg-gradient-to-r from-cyan-500/20 to-purple-500/20
+                                      ${link.color}`}
+                             aria-label={link.label}
+                           >
+                             <FontAwesomeIcon 
+                               icon={link.icon} 
+                               className="text-xl sm:text-2xl text-cyan-400 group-hover:text-white transition-colors duration-300" 
+                             />
+                           </a>
+                         ))}
+                       </div>
+                     </div>
 
           {/* Profile Image */}
-          <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative group">
-            <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-75 group-hover:opacity-100 transition duration-500"></div>
-            <img 
-              ref={imageRef}
-              src={Mypicture}
-              alt="Jurel" 
-              className="relative z-10 w-full h-full object-cover rounded-full border-4 border-black 
-                       transition-transform duration-200 will-change-transform cursor-pointer"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      {showScrollIndicator && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <FontAwesomeIcon 
-            icon={faArrowDown} 
-            className="text-cyan-400 text-2xl" 
-          />
-        </div>
-      )}
-    </div>
-  );
-}
+          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative group">
+                     <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                     <img 
+                       ref={imageRef}
+                       src={Mypicture}
+                       alt="Jurel" 
+                       className="relative z-10 w-full h-full object-cover rounded-full border-4 border-black 
+                                transition-transform duration-200 will-change-transform cursor-pointer"
+                     />
+                   </div>
+                 </div>
+               </div>
+         
+               {/* Scroll indicator */}
+               {showScrollIndicator && (
+                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                   <FontAwesomeIcon 
+                     icon={faArrowDown} 
+                     className="text-cyan-400 text-2xl" 
+                   />
+                 </div>
+               )}
+             </div>
+           );
+         }
 
 export default Home;
