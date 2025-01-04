@@ -1,258 +1,130 @@
 import React from 'react';
-import './ProjectSeper.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import DashboardClone from '../assets/Dashboard-Clone.png'
-import LibraryApp from '../assets/Library-app.png'
-import ProductService from '../assets/productService.png'
-import CartService from '../assets/CartService.png'
-import ToDoList from '../assets/ToDoList.png'
-import TicTacToe from '../assets/TicTacToe.png'
-import ECommerce from '../assets/ECommerce.png'
-import Quiz from '../assets/Quiz.png'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import DashboardClone from '../assets/Dashboard-Clone.png';
+import LibraryApp from '../assets/Library-app.png';
+import ProductService from '../assets/productService.png';
+import CartService from '../assets/CartService.png';
+import ToDoList from '../assets/ToDoList.png';
+import TicTacToe from '../assets/TicTacToe.png';
+import ECommerce from '../assets/ECommerce.png';
+import Quiz from '../assets/Quiz.png';
 
+const projects = [
+  {
+    title: 'Scaler Dashboard Clone',
+    image: DashboardClone,
+    description:
+      'A dashboard clone of Scaler School of Technology using HTML and CSS, showcasing a functional and visually appealing UI.',
+    techStack: 'HTML, CSS, JavaScript',
+    link: 'https://github.com/shailendra-jurel',
+  },
+  {
+    title: 'Library App',
+    image: LibraryApp,
+    description:
+      'A Kotlin-based mobile app simulating a community library where users can share and rent books.',
+    techStack: 'Kotlin',
+    link: 'https://github.com/shailendra-jurel',
+  },
+  {
+    title: 'Fake Store Product Service',
+    image: ProductService,
+    description:
+      'A Spring Boot backend fetching goods from Fake Store API and storing them in a database.',
+    techStack: 'Java, Spring Boot',
+    link: 'https://github.com/shailendra-jurel',
+  },
+  {
+    title: 'E-Commerce Site',
+    image: ECommerce,
+    description: 'A full-stack E-commerce website with cart and checkout functionality.',
+    techStack: 'React, Node.js, MongoDB',
+    link: 'https://github.com/shailendra-jurel',
+  },
+  {
+    title: 'To-Do List App',
+    image: ToDoList,
+    description: 'A simple to-do app to manage daily tasks effectively.',
+    techStack: 'React, Tailwind CSS',
+    link: 'https://github.com/shailendra-jurel',
+  },
+  {
+    title: 'Tic-Tac-Toe',
+    image: TicTacToe,
+    description: 'A fun tic-tac-toe game with a clean and interactive UI.',
+    techStack: 'React',
+    link: 'https://github.com/shailendra-jurel',
+  },
+  {
+    title: 'Quiz App',
+    image: Quiz,
+    description: 'A quiz application with real-time scoring and analytics.',
+    techStack: 'React, Firebase',
+    link: 'https://github.com/shailendra-jurel',
+  },
+];
 
-function ProjectSeper() {
+const ProjectSeper = () => {
+  return (
+    <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen text-gray-800 py-10 px-5">
+      {/* Title */}
+      <h1 className="text-center text-4xl font-bold mb-10">
+        {'Projects'.split('').map((char, index) => (
+          <span
+            key={index}
+            className="hover:text-blue-500 transition duration-300"
+          >
+            {char}
+          </span>
+        ))}
+      </h1>
 
-    const handleCardClick = (link) => {
-        if (link) {
-            window.open(link, '_blank'); // Open link in a new tab
-        }
-    };
-
-
-    return (
-
-        
-
-        <div className="project-seper" id='project-seper'>
-            <div className='project-heading'>
-                <div>
-                    <h1>
-                        {'Projects'.split('').map((char, index) => (
-                            <span key={index} className='letter'>{char}</span>
-                        ))}
-                    </h1>
-                </div>
+      {/* Project Cards */}
+      <div className="flex flex-wrap justify-center gap-8">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden w-80 hover:shadow-2xl transition-shadow duration-300"
+          >
+            {/* Project Image */}
+            <div className="overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="object-cover h-48 w-full rounded-t-2xl group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
 
-            <div className='Project-container'>
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
-                    <div className='project-card-heading'>
-                        <h1>Scaler Dash board clone</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={DashboardClone}></img>
-                        <p className='project-description'>
-                            My first project is a dashboard clone of Scaler School of Technology,
-                            made with HTML and CSS. It highlights my web development skills,
-                            showcasing a functional and visually appealing user interface with
-                            responsive design, marking the start of my web development journey.
-                        </p>
-                    </div>
-
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                HTML, CSS, JavaScript
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
-                    <div className='project-card-heading'>
-                        <h1>Library App</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={LibraryApp}></img>
-                        <p className='project-description'>
-                            I developed a mobile app using Kotlin that simulates a community library.
-                            People in a city can share their books by listing them on the app, and others
-                            can rent these books. This project showcases my Kotlin skills and my ability to
-                            create practical and user-friendly applications.
-                        </p>
-                    </div>
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                Kotlin
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
-                    <div className='project-card-heading'>
-                        <h1>Fake Store Product Service</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={ProductService}></img>
-                        <p className='project-description'>
-                            I built a backend application using Spring Boot and REST APIs
-                            named "Fake Store API." This project fetches goods from the
-                            Fake Store API and stores them in a database, demonstrating my skills
-                            in backend development and API integration.
-                        </p>
-                    </div>
-
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                Java, Spring Boot
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className='Project-card' onClick={()=> handleCardClick("https://github.com/shailendra-jurel")}>
-                    <div className='project-card-heading'>
-                        <h1>Fake Store cart Service</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={CartService}></img>
-                        <p className='project-description'>
-                            I built a backend application using Spring Boot and REST APIs,
-                            integrating the "Fake Store API". Users
-                            can manage their carts and view products in each cart, showcasing my
-                            skills in backend development and API integration.
-                        </p>
-                    </div>
-
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                Java, Spring Boot
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className='Project-card' onClick={() => handleCardClick("https://github.com/shailendra-jurel")}>
-                    <div className='project-card-heading'>
-                        <h1>To Do List</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={ToDoList}></img>
-                        <p className='project-description'>
-                            I built a To-Do list application using React and Node.js. It allows
-                            users to prioritize tasks based on their deadlines and importance,
-                            store them efficiently, and provides a user-friendly interface for
-                            managing daily tasks effectively.
-                        </p>
-                    </div>
-
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                HTML, CSS, JavaScript
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className='Project-card' onClick={()=>handleCardClick("https://github.com/shailendra-jurel")}>
-                    <div className='project-card-heading'>
-                        <h1>Tic Tac Toe</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={TicTacToe}></img>
-                        <p className='project-description'>
-                            I built a Tic Tac Toe application using Spring Boot for the backend,
-                            allowing players to enjoy the game in the terminal. This project showcases
-                            my skills in backend development and interactive game design.
-                        </p>
-                    </div>
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                Java, Spring Boot
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className='Project-card'>
-                    <div className='project-card-heading'>
-                        <h1>E-Commerce Website</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={ECommerce}></img>
-                        <p className='project-description'>
-                            I developed an e-commerce website using HTML, CSS, and JavaScript.
-                            This project showcases my frontend skills by providing a user-friendly
-                            interface for browsing and purchasing items, demonstrating proficiency in
-                            web development fundamentals.
-                        </p>
-                    </div>
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                HTML, CSS, JavaScript
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className='Project-card'>
-                    <div className='project-card-heading'>
-                        <h1>Quiz Application</h1>
-                    </div>
-                    <div className='project-description-img'>
-                        <img src={Quiz}></img>
-                        <p className='project-description'>
-                            I created an entertaining quiz app using HTML, CSS, and JavaScript.
-                            Users can enjoy interactive quizzes with amusing questions and engaging
-                            feedback, demonstrating my frontend development skills in a fun and interactive way.
-                        </p>
-                    </div>
-                    <div className='project-code-tech'>
-                        <div className='code-icon'>
-                            <FontAwesomeIcon icon={faCode} size="2x" />
-                        </div>
-                        <div className='project-tech'>
-                            <p className='project-tech-text'>
-                                HTML, CSS, JavaScript
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+            {/* Card Content */}
+            <div className="p-5">
+              <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-600 mb-4">{project.techStack}</p>
+              <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                </a>
+              </button>
             </div>
-        </div>
-    )
-}
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-xl font-bold mb-4">{project.title}</h3>
+              <p className="text-center text-sm mb-4 px-4">{project.description}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default ProjectSeper;
