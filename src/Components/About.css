@@ -500,8 +500,6 @@ a{
         height: 100%;
     }
 }
-
-
 .last-star .timeline-text-box{
     background-color: transparent; /* Remove background color */
     border: none; /* Remove border */
@@ -511,4 +509,3 @@ a{
 .star-icon{
     margin-top: -50px;
 }
-

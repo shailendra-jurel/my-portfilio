@@ -23,7 +23,7 @@ const App = () => {
   const navItems = [
     { path: '/', icon: faHouse, label: 'Home', section: 'home' },
     { path: '/about', icon: faUser, label: 'About', section: 'about' },
-    { path: '/ProjectsSeper', icon: faProjectDiagram, label: 'ProjectsSeper', section: 'ProjectsSeper' },
+    { path: '/ProjectsSeper', icon: faProjectDiagram, label: 'Projects', section: 'ProjectsSeper' },
     { path: '/resume', icon: faFileAlt, label: 'Resume', section: 'resume' },
     { path: '/blogs', icon: faBlog, label: 'Blogs', section: 'blogs' },
     { path: '/contacts', icon: faUser, label: 'Contact', section: 'contacts' },
@@ -128,7 +128,7 @@ const App = () => {
             <section id="home" className="min-h-screen w-full">
               <Home />
             </section>
-            <section id="about" className="min-h-screen w-full">
+            <section id="about" className="relative min-h-screen w-full">
               <About />
             </section>
             <section id="ProjectsSeper" className="min-h-screen w-full">
